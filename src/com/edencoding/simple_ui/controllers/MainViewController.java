@@ -1,6 +1,5 @@
 package com.edencoding.simple_ui.controllers;
 
-import com.edencoding.simple_ui.config.Defaults;
 import com.edencoding.simple_ui.models.ToastContainer;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -18,6 +17,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainViewController implements Initializable {
+
+    public static final String DRAG_ALLOWED = "drag-allowed";
+
     @FXML
     private StackPane contentContainer;
 
@@ -54,18 +56,18 @@ public class MainViewController implements Initializable {
 
     private void handleOnDragDropped(DragEvent dragEvent) {
         Dragboard db = dragEvent.getDragboard();
-        dragTarget.getStyleClass().remove(Defaults.DRAG_ALLOWED);
+        dragTarget.getStyleClass().remove(DRAG_ALLOWED);
         toastContainer.displayToast("This is where we'd load the file...");
         dragEvent.setDropCompleted(true);
         dragEvent.consume();
     }
 
     private void handleDragExit(DragEvent dragEvent) {
-        dragTarget.getStyleClass().remove(Defaults.DRAG_ALLOWED);
+        dragTarget.getStyleClass().remove(DRAG_ALLOWED);
     }
 
     private void handleDragEntered(DragEvent dragEvent) {
-        dragTarget.getStyleClass().add(Defaults.DRAG_ALLOWED);
+        dragTarget.getStyleClass().add(DRAG_ALLOWED);
     }
 
     @FXML
