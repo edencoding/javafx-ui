@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="79a00f8a-e501-4752-a614-3601995554bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx-ui.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/css/application.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/fxml/MainView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/edencoding/simple_ui/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/edencoding/simple_ui/controllers/MainViewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/edencoding/simple_ui/models/MetricsContainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/edencoding/simple_ui/models/ToastContainer.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ein2ilmxWsgLBIBbk0ojaMZyDO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/simple-ui" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\code\javafx-ui\src\main\resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\javafx-ui\src\com\edencoding" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.edencoding.App" />
+      <module name="javafxui" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.edencoding.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="javafxui" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="javafxui" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79a00f8a-e501-4752-a614-3601995554bb" name="Default Changelist" comment="" />
+      <created>1594813075418</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594813075418</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2240" y="79" key="#Project_Structure" timestamp="1594814834151">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state x="2240" y="79" key="#Project_Structure/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594814834151" />
+    <state x="2214" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594813164167">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state x="2214" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594813164167" />
+    <state x="2483" y="193" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1594813503133">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state x="2483" y="193" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594813503133" />
+    <state x="2466" y="322" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594814805190">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state x="2466" y="322" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594814805190" />
+    <state x="2540" y="259" key="FileChooserDialogImpl" timestamp="1594815820874">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state x="2540" y="259" key="FileChooserDialogImpl/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594815820874" />
+    <state width="1637" height="272" key="GridCell.Tab.0.bottom" timestamp="1594815822210">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="272" key="GridCell.Tab.0.bottom/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594815822210" />
+    <state width="1637" height="272" key="GridCell.Tab.0.center" timestamp="1594815822210">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="272" key="GridCell.Tab.0.center/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594815822210" />
+    <state width="1637" height="272" key="GridCell.Tab.0.left" timestamp="1594815822210">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="272" key="GridCell.Tab.0.left/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594815822210" />
+    <state width="1637" height="272" key="GridCell.Tab.0.right" timestamp="1594815822210">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="272" key="GridCell.Tab.0.right/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594815822210" />
+    <state x="2240" y="79" key="SettingsEditor" timestamp="1594814803013">
+      <screen x="1920" y="0" width="1680" height="1010" />
+    </state>
+    <state x="2240" y="79" key="SettingsEditor/0.0.1280.760/1920.0.1680.1010@1920.0.1680.1010" timestamp="1594814803013" />
+  </component>
+</project>
