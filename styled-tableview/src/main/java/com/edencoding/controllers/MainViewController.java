@@ -1,5 +1,6 @@
 package com.edencoding.controllers;
 
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -16,6 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -47,9 +49,9 @@ public class MainViewController implements Initializable {
         orders.add(new Order(8, "Illinois", "Chicago")); //2.2m
         orders.add(new Order(9, "Massachusetts", "Boston")); //4.3m
         orders.add(new Order(10, "Vermont", "Montpellier"));
-        orders.add(new Order(11, "Revelstoke", "Alberta"));
-        orders.add(new Order(12, "Winnipeg", "Manitoba"));
-        orders.add(new Order(13, "Terrace", "British Colombia"));
+        orders.add(new Order(11, "Alberta", "Revelstoke"));
+        orders.add(new Order(12, "Manitoba", "Winnipeg"));
+        orders.add(new Order(13, "British Colombia", "Terrace"));
 
         exampleTable.setItems(FXCollections.observableList(orders));
     }
@@ -57,6 +59,16 @@ public class MainViewController implements Initializable {
     @FXML
     private void handleExitButtonClicked(ActionEvent event) {
         Platform.exit();
+        event.consume();
+    }
+
+    @FXML
+    private void handleGitButtonClicked(ActionEvent event) {
+        new Application() {
+            @Override
+            public void start(Stage stage) {
+            }
+        }.getHostServices().showDocument("https://github.com/edencoding/javafx-ui/");
         event.consume();
     }
 

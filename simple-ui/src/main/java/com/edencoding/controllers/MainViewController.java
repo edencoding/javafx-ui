@@ -1,27 +1,20 @@
 package com.edencoding.controllers;
 
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.function.Predicate;
 
 public class MainViewController implements Initializable {
 
@@ -38,6 +31,16 @@ public class MainViewController implements Initializable {
     @FXML
     private void handleExitButtonClicked(ActionEvent event) {
         Platform.exit();
+        event.consume();
+    }
+
+    @FXML
+    private void handleGitButtonClicked(ActionEvent event) {
+        new Application() {
+            @Override
+            public void start(Stage stage) {
+            }
+        }.getHostServices().showDocument("https://github.com/edencoding/javafx-ui/");
         event.consume();
     }
 

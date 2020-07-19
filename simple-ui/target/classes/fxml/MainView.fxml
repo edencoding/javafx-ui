@@ -21,6 +21,7 @@
                     </ImageView>
                 </HBox>
                 <HBox id="right-icons" alignment="CENTER_RIGHT" spacing="10" HBox.hgrow="ALWAYS">
+                    <Button onAction="#handleGitButtonClicked" styleClass="git-button"/>
                     <Button onAction="#handleExitButtonClicked" styleClass="exit-button"/>
                 </HBox>
             </HBox>
