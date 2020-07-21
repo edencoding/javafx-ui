@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -34,7 +35,7 @@ public class MainViewController implements Initializable {
     public TableColumn<Order, String> costColumn;
     public TableColumn<Order, Integer> driverColumn;
 
-    private final DecimalFormat currency = new DecimalFormat("$##0.00");
+    private final DecimalFormat currency = new DecimalFormat("$0.00");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -44,8 +45,41 @@ public class MainViewController implements Initializable {
         costColumn.setCellValueFactory(cellData -> new SimpleStringProperty("<not calculated>"));
         courierColumn.setCellValueFactory(cellData -> cellData.getValue().courierIdProperty().asObject());
 
+        costColumn.setCellValueFactory(cellData -> {
+            String formattedCost = currency.format(calculateItemCost(cellData.getValue()));
+            return new SimpleStringProperty(formattedCost);
+        });
+
+        shipTypeColumn.setCellFactory(col -> {
+            TableCell<Order, Boolean> cell = new TableCell<>();
+            cell.itemProperty().addListener((obs, old, newVal) -> {
+                if (newVal != null) {
+                    Node centreBox = createPriorityGraphic(newVal);
+                    cell.graphicProperty().bind(Bindings.when(cell.emptyProperty()).then((Node) null).otherwise(centreBox));
+                }
+            });
+            return cell;
+        });
+
         List<Order> orders = exampleOrders();
         exampleTable.setItems(FXCollections.observableList(orders));
+    }
+
+    private double calculateItemCost(Order order){
+        double priorityMultiplier = order.isPriorityShipping() ? 1.1d : 1d;
+        return order.getWeight() * priorityMultiplier;
+    }
+
+    private Node createPriorityGraphic(Boolean isPriority){
+        HBox graphicContainer = new HBox();
+        graphicContainer.setAlignment(Pos.CENTER);
+        if(isPriority){
+            ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/img/important.png")));
+            imageView.setFitHeight(25);
+            imageView.setPreserveRatio(true);
+            graphicContainer.getChildren().add(imageView);
+        }
+        return graphicContainer;
     }
 
     @FXML

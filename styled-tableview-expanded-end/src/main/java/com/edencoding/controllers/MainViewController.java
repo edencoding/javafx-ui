@@ -44,9 +44,8 @@ public class MainViewController implements Initializable {
         driverColumn.setCellValueFactory(cellData -> cellData.getValue().driverIdProperty().asObject());
 
         costColumn.setCellValueFactory(cellData -> {
-            double priorityMultiplier = cellData.getValue().isPriorityShipping() ? 1.1d : 1d;
-            double cost = cellData.getValue().weightProperty().get() * priorityMultiplier;
-            return new SimpleStringProperty(currency.format(cost));
+            String formattedCost = currency.format(calculateItemCost(cellData.getValue()));
+            return new SimpleStringProperty(formattedCost);
         });
 
         courierColumn.setCellValueFactory(cellData -> {
@@ -56,19 +55,12 @@ public class MainViewController implements Initializable {
 
         shipTypeColumn.setCellFactory(col -> {
             TableCell<Order, Boolean> cell = new TableCell<>();
-
             cell.itemProperty().addListener((obs, old, newVal) -> {
-                if (newVal != null && newVal) {
-                    HBox centreBox = new HBox();
-                    centreBox.setAlignment(Pos.CENTER);
-                    ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/img/important.png")));
-                    imageView.setFitHeight(25);
-                    imageView.setPreserveRatio(true);
-                    centreBox.getChildren().add(imageView);
+                if (newVal != null) {
+                    Node centreBox = createPriorityGraphic(newVal);
                     cell.graphicProperty().bind(Bindings.when(cell.emptyProperty()).then((Node) null).otherwise(centreBox));
                 }
             });
-
             return cell;
         });
 
@@ -77,37 +69,8 @@ public class MainViewController implements Initializable {
 
             cell.itemProperty().addListener((observableValue, o, newValue) -> {
                 if (newValue != null) {
-                    Driver driver = getDriver(newValue);
-
-                    GridPane trackingDetailsHolder = new GridPane();
-                    trackingDetailsHolder.setHgap(5);
-                    ImageView driverPicture = new ImageView(new Image(getClass().getResourceAsStream(driver.getPhotoFileName())));
-                    driverPicture.setPreserveRatio(true);
-                    driverPicture.setFitHeight(30d);
-                    GridPane.setRowSpan(driverPicture, 2);
-                    trackingDetailsHolder.getChildren().add(driverPicture);
-
-                    Label driverStatus = new Label();
-                    driverStatus.textProperty().bind(driver.nameProperty());
-                    GridPane.setColumnIndex(driverStatus, 1);
-                    trackingDetailsHolder.getChildren().add(driverStatus);
-
-                    HBox rating = new HBox();
-                    for (int i = 0; i < driver.getRating(); i++) {
-                        rating.getChildren().add(
-                                new ImageView(new Image(getClass().getResourceAsStream("/img/gold_star.png")))
-                        );
-                    }
-
-                    for (int i = 0; i < (5 - driver.getRating()); i++) {
-                        rating.getChildren().add(
-                                new ImageView(new Image(getClass().getResourceAsStream("/img/black_star.png")))
-                        );
-                    }
-                    GridPane.setConstraints(rating, 1, 1);
-                    trackingDetailsHolder.getChildren().add(rating);
-
-                    cell.graphicProperty().bind(Bindings.when(cell.emptyProperty()).then((Node) null).otherwise(trackingDetailsHolder));
+                    Node graphic = createDriverGraphic(newValue);
+                    cell.graphicProperty().bind(Bindings.when(cell.emptyProperty()).then((Node) null).otherwise(graphic));
                 }
             });
             return cell;
@@ -115,6 +78,57 @@ public class MainViewController implements Initializable {
 
         List<Order> orders = exampleOrders();
         exampleTable.setItems(FXCollections.observableList(orders));
+    }
+
+    private Node createDriverGraphic(Integer driverID){
+        Driver driver = getDriver(driverID);
+
+        GridPane trackingDetailsHolder = new GridPane();
+        trackingDetailsHolder.setHgap(5);
+        ImageView driverPicture = new ImageView(new Image(getClass().getResourceAsStream(driver.getPhotoFileName())));
+        driverPicture.setPreserveRatio(true);
+        driverPicture.setFitHeight(30d);
+        GridPane.setRowSpan(driverPicture, 2);
+        trackingDetailsHolder.getChildren().add(driverPicture);
+
+        Label driverStatus = new Label();
+        driverStatus.textProperty().bind(driver.nameProperty());
+        GridPane.setColumnIndex(driverStatus, 1);
+        trackingDetailsHolder.getChildren().add(driverStatus);
+
+        HBox rating = new HBox();
+        for (int i = 0; i < driver.getRating(); i++) {
+            rating.getChildren().add(
+                    new ImageView(new Image(getClass().getResourceAsStream("/img/gold_star.png")))
+            );
+        }
+
+        for (int i = 0; i < (5 - driver.getRating()); i++) {
+            rating.getChildren().add(
+                    new ImageView(new Image(getClass().getResourceAsStream("/img/black_star.png")))
+            );
+        }
+        GridPane.setConstraints(rating, 1, 1);
+        trackingDetailsHolder.getChildren().add(rating);
+
+        return trackingDetailsHolder;
+    }
+
+    private Node createPriorityGraphic(Boolean isPriority){
+        HBox graphicContainer = new HBox();
+        graphicContainer.setAlignment(Pos.CENTER);
+        if(isPriority){
+            ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/img/important.png")));
+            imageView.setFitHeight(25);
+            imageView.setPreserveRatio(true);
+            graphicContainer.getChildren().add(imageView);
+        }
+        return graphicContainer;
+    }
+
+    private double calculateItemCost(Order order){
+        double priorityMultiplier = order.isPriorityShipping() ? 1.1d : 1d;
+        return order.getWeight() * priorityMultiplier;
     }
 
     @FXML
