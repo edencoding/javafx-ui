@@ -18,29 +18,32 @@
                     </ImageView>
                 </HBox>
                 <HBox id="right-icons" alignment="CENTER_RIGHT" spacing="10" HBox.hgrow="ALWAYS">
-                    <Button onAction="#handleGitButtonClicked" styleClass="git-button"/>
+                    <Button onAction="#handleGitButtonClicked" styleClass="git-button" />
                     <Button onAction="#handleExitButtonClicked" styleClass="exit-button" />
                 </HBox>
             </HBox>
-            <StackPane>
-                <VBox styleClass="highlight-rectangle">
+            <StackPane styleClass="highlight-rectangle">
+                <StackPane.margin>
+                    <Insets right="11.0" />
+                </StackPane.margin>
+                <TextField fx:id="searchBox" styleClass="transparent">
                     <StackPane.margin>
-                        <Insets right="11.0" />
+                        <Insets left="25.0" right="25.0" />
                     </StackPane.margin>
-                    <TextField fx:id="searchBox" styleClass="transparent">
-                        <VBox.margin>
-                            <Insets left="25.0" />
-                        </VBox.margin>
-                    </TextField>
-                </VBox>
-                <Button onAction="#handleClearSearchText" mnemonicParsing="false" styleClass="delete-button" text="Button" StackPane.alignment="CENTER_RIGHT">
-               <StackPane.margin>
-                  <Insets right="23.0" />
-               </StackPane.margin></Button>
+                </TextField>
+                <Button mnemonicParsing="false" onAction="#handleClearSearchText" styleClass="delete-button" text="Button" StackPane.alignment="CENTER_RIGHT">
+                    <StackPane.margin>
+                        <Insets right="23.0" />
+                    </StackPane.margin>
+                </Button>
                 <Button mnemonicParsing="false" styleClass="search-button" text="Button" StackPane.alignment="CENTER_LEFT">
-               <StackPane.margin>
-                  <Insets left="9.0" />
-               </StackPane.margin></Button>
+                    <StackPane.margin>
+                        <Insets left="9.0" />
+                    </StackPane.margin>
+                </Button>
+            <VBox.margin>
+               <Insets right="14.0" />
+            </VBox.margin>
             </StackPane>
             <VBox>
                 <TableView fx:id="exampleTable">
