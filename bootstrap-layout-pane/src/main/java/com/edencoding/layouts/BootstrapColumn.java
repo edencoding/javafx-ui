@@ -35,7 +35,7 @@ public class BootstrapColumn {
      * @param breakPoint the screen size break point being specified
      * @param width      the requested width at this breakpoint (must be between 1 and 12);
      */
-    public void setBreakpointColumnWidth(BootstrapColumnBreakPoint breakPoint, int width) {
+    public void setBreakpointColumnWidth(Breakpoint breakPoint, int width) {
         columnWidths[breakPoint.getValue()] = MathUtils.clamp(width, 1, 12);
     }
 
@@ -44,7 +44,7 @@ public class BootstrapColumn {
      *
      * @param breakPoint the breakpoint to reset
      */
-    public void unsetBreakPoint(BootstrapColumnBreakPoint breakPoint) {
+    public void unsetBreakPoint(Breakpoint breakPoint) {
         columnWidths[breakPoint.getValue()] = -1;
     }
 
@@ -68,7 +68,7 @@ public class BootstrapColumn {
      * @param breakPoint the breakpoint at which to determine the column width
      * @return the requested width at that breakpoint, or based on a lower breakpoint if the specified bp has not been set.
      */
-    public int getColumnWidth(BootstrapColumnBreakPoint breakPoint) {
+    public int getColumnWidth(Breakpoint breakPoint) {
 
         //Iterate through breakpoints, beginning at the specified bp, travelling down. Return first valid bp value.
         for (int i = breakPoint.getValue(); i > 0; i--) {
