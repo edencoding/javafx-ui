@@ -5,7 +5,7 @@ import javafx.scene.Node;
 
 public class BootstrapColumn {
 
-    Node content;
+    private final Node content;
 
     int[] columnWidths = new int[]{
             1,  //XS (default)
@@ -71,11 +71,20 @@ public class BootstrapColumn {
     public int getColumnWidth(Breakpoint breakPoint) {
 
         //Iterate through breakpoints, beginning at the specified bp, travelling down. Return first valid bp value.
-        for (int i = breakPoint.getValue(); i > 0; i--) {
+        for (int i = breakPoint.getValue(); i >= 0; i--) {
             if (isValid(columnWidths[i])) return columnWidths[i];
         }
 
         //If none are valid, return 1
         return 1;
+    }
+
+    /**
+     * Get the node in this column
+     *
+     * @return the content.
+     */
+    public Node getContent() {
+        return content;
     }
 }
