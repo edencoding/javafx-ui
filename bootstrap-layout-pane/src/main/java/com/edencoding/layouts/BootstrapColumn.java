@@ -6,7 +6,7 @@ import javafx.scene.Node;
 public class BootstrapColumn {
 
     Node content;
-    
+
     private int col = 1;
     private int colSm = -1;
     private int colMd = -1;
