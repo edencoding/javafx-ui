@@ -10,7 +10,7 @@ public class MathUtils {
      * @param min   the minimum allowed integer value to be returned
      * @return the clamped value
      */
-    public static int clamp(int value, int max, int min) {
+    public static int clamp(int value, int min, int max) {
 
         if (max < min) throw new IllegalArgumentException("Cannot clamp when max is greater than min");
 
