@@ -14,18 +14,24 @@ public class BootstrapPane extends GridPane {
         setColumnConstraints();
     }
 
-    //Remove all current columns and create 12 equally sized columns for layout.
     private void setColumnConstraints() {
+        //Remove all current columns.
         getColumnConstraints().clear();
+
+        //Create 12 equally sized columns for layout
         double width = 100.0 / 12.0;
         for (int i = 0; i < 12; i++) {
             getColumnConstraints().add(new ColumnConstraints(width));
         }
     }
 
-    public void addBootstrapRow(BootstrapRow row){
+    /**
+     * Add a BootstrapRow to the layout.
+     * New BootstrapRows will automatically start on a new row.
+     *
+     * @param row the row to be added
+     */
+    public void addBootstrapRow(BootstrapRow row) {
         rows.add(row);
     }
-
-
 }
