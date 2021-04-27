@@ -24,6 +24,7 @@ public class App extends Application {
         root.setAlignment(Pos.TOP_CENTER);
         root.setGridLinesVisible(true);
         root.addRow(makeBootstrapRow());
+        root.setPadding(new Insets(15));
 
         primaryStage.setTitle("Responsive Layout Example");
         primaryStage.setScene(new Scene(root, 300, 275));
@@ -38,16 +39,21 @@ public class App extends Application {
     private BootstrapRow makeBootstrapRow() {
         BootstrapRow row = new BootstrapRow();
 
-        BootstrapColumn column1 = new BootstrapColumn(createColoredPane(Color.RED));
+        BootstrapColumn column0 = new BootstrapColumn(createColoredPane(Color.YELLOW.brighter()));
+        column0.setBreakpointColumnWidth(Breakpoint.XSMALL, 12);
+        BootstrapColumn column1 = new BootstrapColumn(createColoredPane(Color.RED.brighter()));
         column1.setBreakpointColumnWidth(Breakpoint.LARGE, 4);
         column1.setBreakpointColumnWidth(Breakpoint.XSMALL, 12);
-        BootstrapColumn column2 = new BootstrapColumn(createColoredPane(Color.BLUE));
+        BootstrapColumn column2 = new BootstrapColumn(createColoredPane(Color.BLUE.brighter()));
         column2.setBreakpointColumnWidth(Breakpoint.LARGE, 4);
-        column2.setBreakpointColumnWidth(Breakpoint.XSMALL, 6);
-        BootstrapColumn column3 = new BootstrapColumn(createColoredPane(Color.GAINSBORO));
+        column2.setBreakpointColumnWidth(Breakpoint.SMALL, 6);
+        column2.setBreakpointColumnWidth(Breakpoint.XSMALL, 12);
+        BootstrapColumn column3 = new BootstrapColumn(createColoredPane(Color.GREEN.brighter()));
         column3.setBreakpointColumnWidth(Breakpoint.LARGE, 4);
-        column3.setBreakpointColumnWidth(Breakpoint.XSMALL, 6);
+        column3.setBreakpointColumnWidth(Breakpoint.SMALL, 6);
+        column3.setBreakpointColumnWidth(Breakpoint.XSMALL, 12);
 
+        row.addColumn(column0);
         row.addColumn(column1);
         row.addColumn(column2);
         row.addColumn(column3);
