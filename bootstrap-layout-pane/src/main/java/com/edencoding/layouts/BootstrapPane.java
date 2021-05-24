@@ -11,12 +11,11 @@ import java.util.List;
 public class BootstrapPane extends GridPane {
 
     private final List<BootstrapRow> rows = new ArrayList<>();
-    private int maxDepth;
     private Breakpoint currentWindowSize = Breakpoint.XSMALL;
 
     public BootstrapPane() {
         super();
-        setAlignment(Pos.CENTER);
+        setAlignment(Pos.TOP_CENTER);
         setColumnConstraints();
         setWidthEventHandlers();
     }
@@ -32,7 +31,6 @@ public class BootstrapPane extends GridPane {
             if (newBreakpoint != currentWindowSize) {
                 currentWindowSize = newBreakpoint;
                 calculateNodePositions();
-                System.out.println("Changed to: " + newBreakpoint);
             }
         });
     }
@@ -50,25 +48,11 @@ public class BootstrapPane extends GridPane {
         }
     }
 
-    private void setRowConstraints() {
-        getRowConstraints().clear();
-
-        //TODO: make more flexible, so doesn't have to take up 100% height
-        double height = 100.0 / maxDepth;
-        for (int i = 0; i < maxDepth; i++) {
-            RowConstraints rowConstraints = new RowConstraints();
-            rowConstraints.setPercentHeight(height);
-            getRowConstraints().add(rowConstraints);
-        }
-    }
-
     private void calculateNodePositions() {
         int currentGridPaneRow = 0;
         for (BootstrapRow row : rows) {
             currentGridPaneRow += calculateRowPositions(row, currentGridPaneRow);
         }
-        maxDepth = currentGridPaneRow;
-        setRowConstraints();
     }
 
     private int calculateRowPositions(BootstrapRow row, int currentGridPaneRow) {
