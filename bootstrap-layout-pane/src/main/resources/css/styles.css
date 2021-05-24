@@ -1,0 +1,57 @@
+@font-face{
+  font-family: 'GloriousFree';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://edencoding.com/wp-content/uploads/2021/02/GloriousFree-dBR6.ttf') format('truetype');
+}
+
+.background{
+    -fx-background-color: linear-gradient(to bottom right, #0f0c29 24%, #302b63 50%, #24243e 74%);
+}
+
+.label{
+    -fx-text-fill: white;
+}
+
+.app-title{
+    -fx-font: 36px 'Glorious Free';
+    -fx-max-width: 100000;
+    -fx-alignment: center;
+}
+
+.widget{
+    -fx-background-color: derive(#0f0c29, 10%);
+    -fx-background-radius: 5px;
+    -fx-background-insets: 5px;
+    -fx-padding: 5px;
+    -fx-spacing: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+}
+
+.widget .label{
+    -fx-font-weight: bold;
+    -fx-font-size: 1.2em;
+    -fx-max-width: 100000;
+    -fx-alignment: center;
+}
+
+.item{
+    -fx-padding: 10px;
+    -fx-alignment: center-left;
+    -fx-spacing: 10px;
+}
+
+.item .label{
+    -fx-font-weight: normal;
+    -fx-wrap-text: true;
+}
+
+.text-field {
+  -fx-border-color: grey;
+  -fx-border-width: 0 0 1 0;
+  -fx-background-color: transparent;
+}
+
+.text-field:focused {
+    -fx-border-color: -fx-focus-color;
+}
