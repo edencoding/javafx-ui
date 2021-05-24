@@ -13,6 +13,8 @@ public class BootstrapRow {
      * @param column the object to be added
      */
     public void addColumn(BootstrapColumn column){
+        if(column == null) return;
+
         columns.add(column);
     }
 
