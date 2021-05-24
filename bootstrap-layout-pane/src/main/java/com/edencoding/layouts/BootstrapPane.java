@@ -51,34 +51,8 @@ public class BootstrapPane extends GridPane {
     private void calculateNodePositions() {
         int currentGridPaneRow = 0;
         for (BootstrapRow row : rows) {
-            currentGridPaneRow += calculateRowPositions(row, currentGridPaneRow);
+            currentGridPaneRow += row.calculateRowPositions(currentGridPaneRow, currentWindowSize);
         }
-    }
-
-    private int calculateRowPositions(BootstrapRow row, int currentGridPaneRow) {
-        int inputRow = currentGridPaneRow;
-        if (row.getColumns().isEmpty()) return 0;
-
-        int currentGridPaneColumn = 0; //start in the first column
-        for (BootstrapColumn column : row.getColumns()) {
-            int contentWidth = column.getColumnWidth(currentWindowSize);
-            if (currentGridPaneColumn + contentWidth > 12) {
-                currentGridPaneRow++;
-                currentGridPaneColumn = 0;
-            }
-
-            GridPane.setConstraints(
-                    column.getContent(),
-                    currentGridPaneColumn,
-                    currentGridPaneRow,
-                    contentWidth,
-                    1
-            );
-
-            currentGridPaneColumn += contentWidth;
-
-        }
-        return currentGridPaneRow - inputRow + 1;
     }
 
     /**
